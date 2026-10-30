@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Escape Rooms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🗝️ JS Escape Rooms</h1>
+    <nav id="nav" aria-label="Livelli"></nav>
+    <button id="reset" class="ghost" title="Cancella i progressi">Ricomincia tutto</button>
+  </header>
+
+  <main>
+    <section class="col">
+      <div class="card stanza-card">
+        <div class="badge" id="badge"></div>
+        <h2 id="titolo"></h2>
+        <div id="passi" class="passi" aria-label="Passi della stanza"></div>
+        <p id="storia" class="storia"></p>
+        <div class="stanza">
+          <div id="oggetti" class="oggetti"></div>
+          <div id="porta" class="porta" aria-label="Porta">🔒</div>
+        </div>
+        <div id="indizio" class="indizio">👆 Clicca gli oggetti per esaminarli e trovare gli indizi.</div>
+      </div>
+      <details class="card" id="lezione-box" open>
+        <summary>📘 Lezione</summary>
+        <div id="lezione" class="lezione"></div>
+      </details>
+    </section>
+
+    <section class="col">
+      <div class="card">
+        <h3 id="passo">🎯 Missione</h3>
+        <p id="missione"></p>
+        <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor di codice"></textarea>
+        <div class="bottoni">
+          <button id="run" class="primary">▶ Esegui <small>(Ctrl/Cmd+Invio)</small></button>
+          <button id="hint">💡 Indizio</button>
+          <button id="restart" class="ghost">↺ Codice iniziale</button>
+        </div>
+        <div id="hints"></div>
+        <div id="feedback" class="feedback" hidden></div>
+        <div class="console-title">Console</div>
+        <pre id="console" class="console">(qui comparirà quello che scrivi con mostra(...))</pre>
+        <button id="next" class="primary big" hidden>Avanti alla prossima stanza →</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="dlg">
+    <div id="dlg-body"></div>
+    <form method="dialog"><button class="primary">Ok</button></form>
+  </dialog>
+
+  <script src="stanze.js"></script>
+  <script src="passi.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
