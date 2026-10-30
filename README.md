@@ -6,7 +6,9 @@ Nessuna dipendenza, nessuna installazione: HTML, CSS e JavaScript puro.
 
 ## Come giocare
 
-Apri `index.html` nel browser (doppio clic), oppure:
+**Online:** https://lucanenni.github.io/js-escape-rooms/
+
+In locale: apri `index.html` nel browser (doppio clic), oppure:
 
 ```bash
 npm start   # poi vai su http://localhost:8765
